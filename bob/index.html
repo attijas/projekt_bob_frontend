@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt BOB</title>
+</head>
+<body>
+    <h2>Lista użytkowników</h2>
+    <table border="1" id="tabela-uzytkownikow">
+    <thead>
+    <tr>
+            <th>login</th>
+            <th>haslo</th>
+            <th>email</th>
+            <th>imie</th>
+            <th>nazwisko</th>
+            <th>wiek</th>
+            <th>stats</th>
+            <th>opis</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+    </table>
+
+    <script>
+    async function pobierzUzytkownikow() {
+    try {
+        const response = await fetch('http://localhost:8080/api/uzytkownicy/wildcard');
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+
+        const users = await response.json();
+        const tbody = document.querySelector("#tabela-uzytkownikow tbody");
+        tbody.innerHTML = ""; // wyczyszczenie starej zawartości
+
+        users.forEach(u => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${u.login}</td>
+            <td>${u.haslo}</td>
+            <td>${u.email}</td>
+            <td>${u.imie}</td>
+            <td>${u.nazwisko}</td>
+            <td>${u.wiek}</td>
+            <td>${u.status}</td>
+            <td>${u.opis}</td>
+        `;
+        tbody.appendChild(row);
+        });
+    } catch (err) {
+        console.error("Błąd pobierania użytkowników:", err);
+    }
+    }
+    window.addEventListener("DOMContentLoaded", pobierzUzytkownikow);
+    </script>
+</body>
+</html>
