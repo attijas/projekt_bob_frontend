@@ -31,7 +31,7 @@
 
         const users = await response.json();
         const tbody = document.querySelector("#tabela-uzytkownikow tbody");
-        tbody.innerHTML = ""; // wyczyszczenie starej zawartości
+        tbody.innerHTML = "";
 
         users.forEach(u => {
         const row = document.createElement("tr");
