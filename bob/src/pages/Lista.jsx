@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Footer from "../components/common/FooterMain";
 
 const Lista = () => {
   const [uzytkownicy, setUzytkownicy] = useState([]);
@@ -30,6 +31,7 @@ const Lista = () => {
   }, []);
 
   return (
+    <>
     <div style={{ padding: "20px" }}>
       <h2>Lista użytkowników</h2>
 
@@ -91,6 +93,8 @@ const Lista = () => {
         </tbody>
       </table>
     </div>
+    <Footer />
+    </>
   );
 };
 

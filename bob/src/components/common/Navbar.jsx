@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../css/navbar.css"
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-expand-md navbar-primary fixed-top customNavbar"  id="customNavbar">
       <div className="container">
+        <a class="navbar-brand" href="/">
+        <img src="../../src/img/logo.png" width="45" height="45" alt="nie działa" />
+        </a>
         <Link className="navbar-brand" to="/">Projekt BOB</Link>
         <button
           className="navbar-toggler"
@@ -18,13 +22,13 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">Strona główna</Link>
+              <Link className="nav-link" to="/galeria">Galeria</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/lista">Lista użytkowników</Link>
+              <Link className="nav-link" to="/czat">Czat</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#contact">Kontakt</a>
+              <Link className="nav-link" to="/login">Logowanie</Link>
             </li>
           </ul>
         </div>
