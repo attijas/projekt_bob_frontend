@@ -1,7 +1,11 @@
 import React from "react";
 import Navbar from "./components/common/Navbar.jsx";
-import Lista from "./pages/Lista.jsx";
+import FooterMain from "./components/common/FooterMain.jsx";
+import Lista from "./pages/pages/Lista.jsx";
+import SearchBar from "./components/common/SearchBar.jsx";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 const App = () => {
   return (
@@ -20,6 +24,8 @@ const App = () => {
         {/* Strona lista */}
         <Route path="/lista" element={<Lista />} />
       </Routes>
+      <SearchBar/>
+      <FooterMain/>
     </Router>
   );
 };
