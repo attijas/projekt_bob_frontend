@@ -2,44 +2,48 @@ import React from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "../css/searchbar.css"
 
 const SearchBar = () => {
     return (
         <div class="container mt-5">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <div id="carouselExample" class="carousel slide">
-                        <div class="carousel-inner">
+                        
+                        <div class="carousel-inner mx-auto">
 
                             <div class="carousel-item active">
                                 <div class="d-flex justify-content-center gap-3 py-5">
-                                    <a href="/strona1" class="btn btn-primary btn-lg">Przejdź do strony 1</a>
-                                    <a href="/strona2" class="btn btn-success btn-lg">Przejdź do strony 2</a>
-                                    <a href="/strona3" class="btn btn-warning btn-lg">Strona 3</a>
+                                    <a href="/strona1" class="btn btn-lg button-carousel-main">Wykończenia</a>  
+                                    <a href="/strona2" class="btn btn-lg button-carousel-main">Hydraulika</a>
+                                    <a href="/strona3" class="btn btn-lg button-carousel-main">Elektryka</a>
                                 </div>
                             </div>
 
                             <div class="carousel-item">
                                 <div class="d-flex justify-content-center gap-3 py-5">
-                                    <a href="/raporty" class="btn btn-secondary btn-lg">Raporty</a>
-                                    <a href="/uzytkownicy" class="btn btn-primary btn-lg">Użytkownicy</a>
+                                    <a href="/raporty" class="btn btn-lg button-carousel-main">Glazura</a>
+                                    <a href="/uzytkownicy" class="btn btn-lg button-carousel-main">Dach</a>
+                                    <a href="/pomoc" class="btn btn-lg button-carousel-main">Klimatyzacja</a>
+                                    <a href="/kontakt" class="btn btn-lg button-carousel-main">Stolarz</a>
                                 </div>
                             </div>
 
                             <div class="carousel-item">
                                 <div class="d-flex justify-content-center gap-3 py-5">
-                                    <a href="/pomoc" class="btn btn-info btn-lg">Pomoc</a>
-                                    <a href="/kontakt" class="btn btn-danger btn-lg">Kontakt</a>
+                                    
+                                    <a href="/kontakt" class="btn btn-lg button-carousel-main">inne</a>
                                 </div>
                             </div>
 
                         </div>
 
-                        <button class="carousel-control-prev" type="button"
+                        <button class="carousel-control-prev" type="button" id="button-prev"
                             data-bs-target="#carouselExample" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button"
+                        <button class="carousel-control-next" type="button" id="button-next"
                             data-bs-target="#carouselExample" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
@@ -53,7 +57,7 @@ const SearchBar = () => {
                                 aria-describedby="searchHelp"
                                 placeholder="Wyszukaj"
                             />
-                            <button type="submit" class="btn btn-primary ms-md-3">Szukaj</button>
+                            <button type="submit" class="btn button-carousel-main ms-md-3">Szukaj</button>
                         </div>
                     </form>
 
